@@ -1,0 +1,280 @@
+﻿html, body, input, textarea, keygen, select, button{
+	font-family: "Lato",Verdana,Helvetica,Arial,sans-serif;
+	/*font-size:12px;*/
+}
+.float{
+	float:left;
+}
+
+.float-right{
+	float:right;
+}
+
+.clear{
+	clear:both;
+}
+
+.hidden{
+	display:none;
+}
+
+ul,li{
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+h1,h2,h3,h4{
+	font-family:'Neo Sans W01' !important;
+}
+
+/*SharePoint updates */
+#sideNavBox{
+	display:none;
+}
+
+#contentBox{
+	margin-left:80px;
+}
+
+#siteIcon{
+	/*display:none;*/
+	height:45px;
+}
+.ms-siteicon-img{
+	max-width:96px;
+	padding-top:10px;
+}
+
+
+#titleAreaBox{
+	padding-left:60px;
+}
+
+.ms-breadcrumb-box{
+	height:45px;
+}
+#s4-titlerow{
+	height:45px;
+	padding-bottom:0px;
+}
+.ms-breadcrumb-top{
+	display:none;
+}
+#pageStatusBar[class], .ms-status-msg{
+	margin-left:70px;
+}
+#WebPartAdderUpdatePanelContainer{
+	z-index:100;
+	position:relative;
+}
+
+
+/*Font Style Fix */
+.ms-core-pageTitle, .ms-core-pageTitle a,
+.ms-webpart-titleText.ms-webpart-titleText, .ms-webpart-titleText > a{
+	font-family:'Neo Sans W01' !important;
+}
+
+.ms-textLarge,
+.ms-core-defaultFont, #pageStatusBar, .ms-status-msg, .js-callout-body
+{
+	font-family: "Lato",Verdana,Helvetica,Arial,sans-serif;
+}
+.ms-rtestate-field,
+.ms-rteFontSize-2{
+	font-family: "Lato",Verdana,Helvetica,Arial,sans-serif !important;
+}
+
+/* Navigation */
+#into-sitenav{
+	display:block;
+	position:fixed;
+	width:60px;
+	height:100%;
+	background:#333;
+	top:85px;
+	left:0px;
+    z-index:2;
+}
+#into-sitenav li.nav-item{
+	width:200px;
+	height:60px;
+	color:white;
+    border-top:1px #333 solid;
+}
+#into-sitenav li.nav-item:last-child {
+    border-bottom:1px #333 solid;
+}
+#into-sitenav.folded li.nav-item{
+	width:60px;
+}
+
+
+#into-sitenav li.nav-item a,
+#into-sitenav li.nav-item a:link,
+#into-sitenav li.nav-item a:visited{
+	color:white;
+	line-height:75px;
+	text-align:left;
+	display: block;
+	cursor:pointer;
+	width:190px;
+	height:60px;
+	padding-left:10px;
+    background-repeat: no-repeat;
+    background-size: 40px;
+    background-position: 10px;
+}
+
+#into-sitenav li.nav-item a:hover,
+#into-sitenav li.nav-item.current a:hover{
+	background-color:#ED1C24;
+	color:#333;
+	text-decoration:none;
+}
+#into-sitenav li.nav-item.current a{
+	background-color:white;
+	color:#333;
+	text-decoration:none;
+}
+
+#into-sitenav li.nav-item#menu-control a:hover{
+	background:#ED1C24;
+}
+
+
+#into-sitenav i.fa{
+	width:40px;
+	text-align:center;
+    position: relative;
+    top: -5px;
+}
+
+#into-sitenav .menu-text{
+	padding-left:15px;
+	display: inline-block;
+    height: 60px;
+    position: relative;
+    top: -8px;
+    font-size: 1em;
+}
+
+#into-sitenav.folded .menu-text{
+	display:none;
+}
+
+
+#into-sitenav.folded li.nav-item a,
+#into-sitenav.folded li.nav-item a:link,
+#into-sitenav.folded li.nav-item a:visited{
+	width:60px;
+	text-align:center;
+	padding-left:0;
+	background-repeat: no-repeat;
+    background-size: 40px;
+    background-position: 10px;
+}
+
+#inner-ul li.inner-nav{
+    width:250px;
+	height:60px;
+	background:#666;
+    position:relative;
+    /*left:200px;
+    top:-60px;*/
+    border-right:1px #333 solid;
+    border-top:1px #333 solid;
+}
+#inner-ul li.inner-nav:last-child {
+    border-bottom:1px #333 solid;
+}
+#inner-ul li.inner-nav.first {
+    background:#333 !important;
+}
+
+#inner-ul li.inner-nav.first div.inner-text{
+    float:right;
+    width:190px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap; 
+}
+
+#inner-ul.folded li.inner-nav{
+    width:250px;
+	/*width:300px;*/
+	height:60px;
+	background:#666;
+    position:relative;
+    left:60px;
+    /*top:-60px;*/
+}
+
+#inner-ul li.inner-nav a,
+#inner-ul li.inner-nav a:link,
+#inner-ul li.inner-nav a:visited{
+	color:white;
+	line-height:75px;
+	text-align:left;
+	display: block;
+	cursor:pointer;
+	width:245px;
+	height:60px;
+	padding-left:5px;
+    background-repeat: no-repeat;
+    background-size: 250px;
+    background-position: 10px;
+}
+
+#inner-ul.folded li.inner-nav a,
+#inner-ul.folded li.inner-nav a:link,
+#inner-ul.folded li.inner-nav a:visited{
+	color:white;
+	line-height:75px;
+	text-align:left;
+	display: block;
+	cursor:pointer;
+	width:245px;
+	height:60px;
+	padding-left:5px;
+    background-repeat: no-repeat;
+    background-size: 250px;
+    background-position: 10px;
+}
+
+#inner-ul .inner-text{
+	padding-left:15px;
+	display: inline-block;
+    height: 60px;
+    position: relative;
+    font-size: 1em;
+    width:220px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap; 
+    top:-8px;
+}
+
+#inner-ul li.inner-nav a:hover,
+#inner-ul li.inner-nav.current a:hover{
+	background-color:#ED1C24;
+	color:#FFF;
+	text-decoration:none;
+}
+#inner-ul li.inner-nav.current a{
+	background-color:white;
+	color:#333;
+	text-decoration:none;
+}
+
+#inner-ul.folded li.inner-nav a:hover,
+#inner-ul.folded li.inner-nav.current a:hover{
+	background-color:#ED1C24;
+	color:#FFF;
+	text-decoration:none;
+}
+#inner-ul.folded li.inner-nav.current a{
+	background-color:white;
+	color:#333;
+	text-decoration:none;
+}

@@ -1,0 +1,244 @@
+﻿<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.13/moment-timezone-with-data.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.SPServices/2014.02/jquery.SPServices-2014.02.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script type="text/javascript">
+
+    var INTONotifications = {
+        
+        preCheckCookie:function preCheckCookie() {
+            //Get
+            var query = "<Query>"
+                + "<OrderBy>"
+                + "<FieldRef Name='Expires' Ascending='True' />"
+                + "<FieldRef Name='Modified' Ascending='FALSE' />"
+                + "</OrderBy>"
+                + "<Where>"
+                + "<Geq>"
+                + "<FieldRef Name='Expires' />"
+                + "<Value Type='DateTime'>" + moment.tz(moment(new Date()), "Europe/London")._d.format('yyyy-MM-ddTHH:mm:ssZ') +"</Value>"
+                + "</Geq>"
+                + "</Where>"
+                + "</Query>";
+
+
+            $().SPServices({
+                operation: "GetListItems",
+                webURL: _spPageContextInfo.webAbsoluteUrl,
+                async: true,
+                listName: "Notifications",
+                CAMLViewFields: " <ViewFields><FieldRef Name='Body' /><FieldRef Name='Expires' /><FieldRef Name='Icon' /><FieldRef Name='Modified' /><FieldRef Name='Expires' /></ViewFields>",
+                CAMLQuery: query,
+                CAMLRowLimit: 1,
+                completefunc: function(xData) {
+                    INTONotifications.log(xData);
+
+                    //Get the data
+                    var domElementArray = $(xData.responseXML).SPFilterNode("z:row").each(function () { });
+                    var dataMap = domElementArray.map(function () {
+                        INTONotifications.log($(this).attr('ows_Expires'));
+                        INTONotifications.log('Icon name: ' + $(this).attr('ows_Icon'));
+                        return {
+                            id: $(this).attr('ows_ID'),
+                            expiryDate: $(this).attr('ows_Expires'),
+                            lastModified: $(this).attr('ows_Modified')
+                        };
+                    });
+
+                    var data = dataMap.get();
+                    if (data.length > 0) {
+                        INTONotifications.log('expiry date for cookie:' + data[0].expiryDate);
+                        INTONotifications.checkCookie(data[0].expiryDate, data[0].lastModified);
+                    }
+                }
+            });
+        },
+
+        //Check the Cookie
+        checkCookie:function checkCookie(expiryDate, lastModified) {
+            INTONotifications.log('checking cookie');
+            var d = INTONotifications.readCookie("UserCookie" + lastModified);
+            if (d == null || d == '' || d == 'undefined') {
+
+                INTONotifications.log('opening popup');
+                INTONotifications.GetNotificationMessage();
+            }
+        },
+
+        //Get Notifcation Message from the List by making ajax request   SPServices
+        GetNotificationMessage:function GetNotificationMessage() {
+            INTONotifications.log(window.location.host);
+	  
+            var query = "<Query>"
+                + "<OrderBy>"
+                + "<FieldRef Name='Expires' Ascending='True' />"
+                + "<FieldRef Name='Modified' Ascending='FALSE' />"
+                + "</OrderBy>"
+                + "<Where>"
+                + "<Geq>"
+                + "<FieldRef Name='Expires' />"
+                + "<Value Type='DateTime'>" + moment.tz(moment(new Date()), "Europe/London")._d.format('yyyy-MM-ddTHH:mm:ssZ') +"</Value>"
+                + "</Geq>"
+                + "</Where>"
+                + "</Query>";
+            
+            $().SPServices({
+                operation: "GetListItems",
+                webURL: _spPageContextInfo.webAbsoluteUrl,
+                async: true,
+                listName: "Notifications",
+                CAMLViewFields: " <ViewFields><FieldRef Name='Body' /><FieldRef Name='Icon' /><FieldRef Name='Expires' /><FieldRef Name='Show_x0020_CheckBox'/></ViewFields>",
+                CAMLQuery: query,
+                CAMLRowLimit: 1,
+                completefunc: INTONotifications.GetHtml
+            });
+        },
+
+        GetHtml:function GetHtml(xData) {
+            INTONotifications.log(xData);
+            //Get the data
+            var domElementArray = $(xData.responseXML).SPFilterNode("z:row").each(function () { });
+            var dataMap = domElementArray.map(function () {
+            
+                return {
+                
+                    id: $(this).attr('ows_ID'),
+                    content: $(this).attr('ows_Body'),
+                    title: $(this).attr('ows_Title'),
+                    expiryDate: $(this).attr('ows_Expires'),
+                    lastModified: $(this).attr('ows_Modified'),
+                    icon: $(this).attr('ows_Icon'),
+                    showCheckBox : $(this).attr('ows_Show_x0020_CheckBox')
+                };
+            });
+
+            var data = dataMap.get();
+            if (data.length > 0) {
+                INTONotifications.log(data);
+                INTONotifications.OpenPopUp(data[0].content, data[0].title, data[0].icon, data[0].showCheckBox, data[0].lastModified,data[0].expiryDate);
+            }
+        },
+
+        //Form the Html from the Data and add it to the content
+        OpenPopUp:function OpenPopUp($gHtml, itemTitle, iconName, showCheckBox, lastModified, expiryDate) {
+            INTONotifications.log('open popup');
+            var chkBoxVisibility = (showCheckBox == 1) ? "block" : "none";
+            var $gElem = '<div class="PopUpContainer">' +
+                '<input type="hidden" name="lastModified" value="' + lastModified+'"/>' +
+                '<input type="hidden" name="expiryDate" value="' + expiryDate+'" />' +
+                '<div class="PopUpTopBG">' +
+                '</div>' +
+                '<div class="PopUpTitle" style="margin-top:5px;">' +
+                '<i class="fa ' + iconName + ' fa-3x" style="float:left;padding:5px;"></i><h1 style="float:left;padding:5px;color:#000;">' +
+                itemTitle +
+                '</h1></div>' +
+                '<div class="PopUpContent" style="clear:both;border-top:1px solid #CCC; padding-top:5px;">' + $gHtml + 
+                '<div style="float:right; clear:both;padding-top:40px;width:100%">'    +                           
+                '<span style="display:' + chkBoxVisibility +'"><input id="notificationshowMessage"  type="checkbox"   title="showNoMessage" />Do not show this message again</span> '+   
+                '<input type="button" class="PopUpClose" style="float:right;margin-top:-25px;" value="OK"/>'+
+                '</div>' +
+
+                '</div>' +
+                '<div class="PopUpBottomBG">' +
+                '</div>' +
+                '</div>';
+            INTONotifications.log('html: ' + $gHtml);
+
+            var htmlToLoad = $($gElem).append('<div class="PopUpBottomBG">');
+            var cloneModalContent = document.createElement('div');
+
+            cloneModalContent.innerHTML = htmlToLoad.html();
+            var options = {
+                html: cloneModalContent,
+                autoSize: true,
+                allowMaximize: false,
+                showClose: true,
+                dialogReturnValueCallback:
+                    function (results, returnValue) {
+                        var ischecked = returnValue[1];
+                        var ischeckedBoxVisible = returnValue[2];
+                        var lastModified = returnValue[3];
+                        var expiryDate = returnValue[4];
+                        if (ischeckedBoxVisible && ischecked) {
+                            INTONotifications.createCookie("UserCookie" + lastModified, "UserCookie", expiryDate);
+                        }
+                    }
+            };
+
+            $(window).scrollTop(0);
+            SP.UI.ModalDialog.showModalDialog(options);
+
+            var styles = { border: "none", height: "auto" };
+            $('.ms-dlgTitle').css('display', 'none');
+            $(".ms-dlgContent").css(styles);
+            $(".ms-dlgBorder").css(styles);
+            $(".ms-dlgFrameContainer").css(styles);
+            $(".ms-dlgFrameContainer").css("width", "+=2");
+
+            
+            //Close function.
+            $(".PopUpClose").on("click", function () {
+                
+                var popUpData = [];
+                popUpData[0] = 'Closed';
+                popUpData[1] = $("#notificationshowMessage").is(":checked");
+                popUpData[2] = $("#notificationshowMessage").is(":Visible");
+                popUpData[3] = $("input:hidden[name=lastModified]").val();
+                popUpData[4] = $("input:hidden[name=expiryDate]").val();
+
+                SP.UI.ModalDialog.commonModalDialogClose(SP.UI.DialogResult.cancel, popUpData);
+            });
+        },
+
+        createCookie: function createCookie(name, value, expiry) {
+
+            //var date = new Date();
+            //By default Im setting it to 20 minuts. You can keep as much you need based on the requirement
+            //date.setMinutes(date.getMinutes() + 20)
+            //var expires = '; expires=' + date.toGMTString();
+
+            //Set expiry to midnight
+            //var expires = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23, 59, 59).toGMTString();
+            INTONotifications.log('cookie expiry: ' + expiry);
+            var expires = new Date(expiry);
+            INTONotifications.log('cookie expires: ' + expires.toGMTString());
+            INTONotifications.log('cookie expires: ' + moment.tz(expires, "Europe/London")._d.format("yyyy-MM-dd HH:mm:ss"));
+      
+            expires = '; expires=' + moment.tz(expires, "Europe/London")._d.format("yyyy-MM-dd HH:mm:ss");
+
+            document.cookie = name + '=' + value + expires + '; path=/';
+        },
+
+        readCookie: function readCookie(name) {
+            var nameEQ = name + '=';
+            var ca = document.cookie.split(';');
+            INTONotifications.log(ca);
+
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                INTONotifications.log(c);
+                while (c.charAt(0) == ' ') {c = c.substring(1, c.length)};
+                if (c.indexOf(nameEQ) == 0) {
+                    INTONotifications.log(c.substring(nameEQ.length, c.length));
+                    return c.substring(nameEQ.length, c.length);
+                };
+            };
+            return null;
+        },
+
+        eraseCookie:function (name) {
+            INTONotifications.createCookie(name, '', -1);
+        },
+
+        log:function log(l) {
+            console.log(l);
+        }
+    }
+
+    $(document).ready(function() {
+        ExecuteOrDelayUntilScriptLoaded(INTONotifications.preCheckCookie, "sp.js");
+    });
+
+</script>

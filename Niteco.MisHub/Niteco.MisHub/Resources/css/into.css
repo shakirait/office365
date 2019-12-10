@@ -1,0 +1,490 @@
+﻿`
+/* General Styles */
+html, body, input, textarea, keygen, select, button {
+    font-family: "Lato",Verdana,Helvetica,Arial,sans-serif;
+    /*font-size:12px;*/
+}
+
+.float {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.hidden {
+    display: none;
+}
+
+ul, li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Neo Sans W01' !important;
+}
+
+/*SharePoint updates */
+#sideNavBox {
+    display: none;
+}
+
+#contentBox {
+    margin-left: 10px;
+}
+
+.ms-rtestate-field p, p.ms-rteElement-P {
+    margin: 0;
+    display: none;
+}
+
+.ms-breadcrumb-top {
+    display: none;
+}
+
+#siteIcon {
+    /*display:none;*/
+    height: 45px;
+}
+
+#titleAreaBox {
+    padding-left: 60px;
+}
+
+.ms-breadcrumb-box {
+    height: 45px;
+}
+
+#s4-titlerow {
+    height: 45px;
+    padding-bottom: 0px;
+}
+
+#pageStatusBar[class], .ms-status-msg {
+    margin-left: 70px;
+}
+
+#WebPartAdderUpdatePanelContainer {
+    z-index: 100;
+    position: relative;
+}
+
+.ms-webpart-titleText {
+    font-size: 2em;
+}
+
+.ms-siteicon-img {
+    max-width: 100px;
+    padding-top: 10px;
+}
+
+@media screen and (max-width: 1010px) {
+    /*.ms-siteicon-img{
+		max-width:56px;
+		padding-top:10px;
+	}
+	.ms-core-pageTitle{
+		font-size:2em;
+		padding-top:10px;
+	}*/
+}
+
+/*Font Style Fix */
+.ms-core-pageTitle, .ms-core-pageTitle a,
+.ms-webpart-titleText.ms-webpart-titleText, .ms-webpart-titleText > a {
+    font-family: 'Neo Sans W01' !important;
+}
+
+.ms-textLarge,
+.ms-core-defaultFont, #pageStatusBar, .ms-status-msg, .js-callout-body {
+    font-family: "Lato",Verdana,Helvetica,Arial,sans-serif;
+}
+
+.ms-rtestate-field,
+.ms-rteFontSize-2 {
+    font-family: "Lato",Verdana,Helvetica,Arial,sans-serif !important;
+}
+/*Working on it text fix*/
+.ms-dlgLoadingTextDiv span.ms-accentText:after {
+    content: 'Calculating...' !important;
+    font-size: 36px;
+}
+
+.ms-dlgLoadingTextDiv span.ms-accentText {
+    font-size: 0px;
+}
+
+.ms-ar-text {
+    color: #ED1C24;
+    font-size: 36px;
+}
+
+/*Full page*/
+#s4-bodyContainer {
+    height: calc(100% - 35px);
+}
+
+#contentRow {
+    height: calc(100% - 95px);
+    padding-top: 10px;
+}
+
+#contentBox {
+    height: 100%;
+    /*min-width:0px;*/ /*Remove min-width and re-use SharePoint min-width*/
+}
+
+#DeltaPlaceHolderMain {
+    height: 100%;
+}
+
+/*Page Layout Styles */
+#left-content {
+    width: calc(70% - 15px);
+    margin-right: 15px;
+}
+
+#right-content {
+    width: 30%;
+}
+
+#filtered-content {
+    width: 180px;
+}
+
+#result-content {
+    margin-left: 220px;
+    margin-right: 20px;
+}
+
+.templink {
+    position: absolute;
+    bottom: 5px;
+    right: 15px;
+}
+/* Navigation */
+#into-sitenav {
+    display: block;
+    position: fixed;
+    width: 60px;
+    height: 100%;
+    background: #333;
+    top: 85px;
+    left: 0px;
+}
+
+    #into-sitenav li.nav-item {
+        width: 200px;
+        height: 60px;
+        color: white;
+    }
+
+    #into-sitenav.folded li.nav-item {
+        width: 60px;
+    }
+
+
+    #into-sitenav li.nav-item a,
+    #into-sitenav li.nav-item a:link,
+    #into-sitenav li.nav-item a:visited {
+        color: white;
+        line-height: 75px;
+        text-align: left;
+        display: block;
+        cursor: pointer;
+        width: 190px;
+        height: 60px;
+        padding-left: 10px;
+    }
+
+        #into-sitenav li.nav-item a:hover,
+        #into-sitenav li.nav-item.current a:hover {
+            background-color: #ED1C24;
+            color: #333;
+            text-decoration: none;
+        }
+
+    #into-sitenav li.nav-item.current a {
+        background-color: white;
+        color: #333;
+        text-decoration: none;
+    }
+
+    #into-sitenav li.nav-item#menu-control a:hover {
+        background: #ED1C24;
+    }
+
+
+    #into-sitenav i.fa {
+        width: 40px;
+        text-align: center;
+    }
+
+    #into-sitenav .menu-text {
+        padding-left: 15px;
+        display: inline-block;
+        height: 60px;
+        position: relative;
+        top: -8px;
+        font-size: 1em;
+    }
+
+    #into-sitenav.folded .menu-text {
+        display: none;
+    }
+
+
+    #into-sitenav.folded li.nav-item a,
+    #into-sitenav.folded li.nav-item a:link,
+    #into-sitenav.folded li.nav-item a:visited {
+        width: 60px;
+        text-align: center;
+        padding-left: 0;
+        background-repeat: no-repeat;
+        background-size: 40px;
+        background-position: 10px;
+    }
+
+/*Page Content */
+#into-pagecontent {
+    /*width: calc(100% - 70px);*/
+    position: relative;
+    /*left: 70px;*/
+    padding-top: 15px;
+}
+
+.row-1, .row-3 {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.col-3 {
+    width: 32%;
+    margin-right: 1%;
+    min-width: 200px;
+    margin-bottom: 15px;
+}
+
+    .col-3.last {
+        margin-right: 0;
+    }
+
+#powerbi-box {
+    background: #eee;
+    max-height: 500px;
+    margin-bottom: 15px;
+}
+
+.webpart-header {
+    font-size: 1.2em;
+    padding-bottom: 15px;
+}
+
+.my-kpi-wp-title {
+    width: 100%;
+    position: relative;
+    height: 26px;
+    background: #ddd;
+    margin-top: 70px;
+}
+
+.border1 {
+    height: 5px;
+    width: calc(100% - 20px);
+    padding: 0px 10px;
+    background: #333;
+    margin: 10px 0 5px;
+}
+
+.kpi-wp-title {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    font-size: 2.77em;
+    color: #333;
+    padding: 0 15px;
+    height: 38px;
+    font-family: 'Neo Sans W01' !important;
+}
+
+.my-kpi-wp-title .button1 {
+    display: block;
+    font-size: 16px;
+    padding: 5px 15px;
+    text-align: center;
+    color: white;
+    background-color: #00aaad;
+    text-decoration: none;
+    position: absolute;
+    top: -48px;
+    right: 1px;
+    border: 1px solid #00aaad;
+    outline: none;
+}
+
+    .my-kpi-wp-title .button1:hover {
+        color: #00aaad;
+        background-color: white;
+        text-decoration: none;
+    }
+
+.my-kpi-item {
+    height: 120px;
+    width: 120px;
+    line-height: 120px;
+    color: #333;
+    margin-right: 15px;
+    border: 0;
+    text-align: center;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+iframe.my-kpi-item {
+    height: 120px;
+    width: 240px;
+    line-height: 120px;
+    color: #333;
+    margin-right: 15px;
+    border: 1px solid #aaa;
+    text-align: center;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+img.my-kpi-item {
+    border: 1px solid #aaa;
+    float: none;
+}
+
+.my-kpi-item .kpi-checkbox {
+    position: absolute;
+    top: 3px;
+    right: 0px;
+    height: 25px;
+    width: 25px;
+}
+
+
+#edit-mykpi-list .my-kpi-item {
+    margin-right: 220px;
+}
+
+.my-kpi-item .kpi-desc {
+    position: absolute;
+    width: 200px;
+    left: 130px;
+    top: 0px;
+    text-align: left;
+    line-height: 20px;
+    font-size: 0.9em;
+    padding: 5px;
+    overflow: hidden;
+    height: 110px;
+}
+
+    .my-kpi-item .kpi-desc .kpi-title {
+        font-size: 1.3em;
+        font-weight: 800;
+    }
+
+.wpz-box {
+    border: 1px solid #bbb;
+    min-height: 120px;
+}
+
+
+.button1 {
+    height: 30px;
+    width: 100px;
+    background: #333;
+    color: white;
+    cursor: pointer;
+    line-height: 30px;
+    text-align: center;
+    font-size: 1.1em;
+    border: 1px solid #333;
+}
+
+    .button1:hover {
+        background: #eee;
+        color: #333;
+    }
+
+#mainBody {
+    padding-left: 0;
+}
+
+/*------------FOOTER-------------------*/
+.footer {
+    color: #b3b3b3;
+    margin-top: 0;
+    font-size: 0.88em;
+    font-family: Arial;
+    background-color: #262524;
+}
+
+.footer, .push {
+    padding: 18px 0;
+}
+
+    .footer a {
+        color: #b3b3b3;
+    }
+
+    .footer .version {
+        font-size: 12px;
+    }
+
+.copyright {
+    font: 14px/25px 'Arial';
+    color: #e9e9e9;
+    padding-left: 0;
+}
+
+.social_links {
+    padding-right: 0;
+}
+
+    .social_links span, .social_links a {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 5px;
+        color: #e9e9e9;
+        font: 14px/1 'Arial';
+    }
+
+        .social_links a i {
+            font-size: 25px;
+        }
+
+        .social_links a:hover i.icon-linkedin-sign, .social_links a:hover i.icon-youtube-sign, .social_links a:hover i.icon-google-plus-sign, .social_links a:hover i.icon-twitter-sign, .social_links a:hover i.icon-facebook-sign {
+            color: #70B7D2;
+        }
+
+        .social_links a:hover {
+            text-decoration: none;
+        }
+/*Niteco icon style*/
+.footer__niteco-icon {
+    background: url("../Images/niteco-icon.png");
+    height: 22px;
+    width: 22px;
+    background-size: 22px 22px;
+    border-radius: 4px;
+    position: relative;
+    top: -1px;
+}
+
+    .footer__niteco-icon:hover, .footer__niteco-icon:focus {
+        background: url("../Images/niteco-icon_hover.png");
+        background-size: 22px 22px;
+    }
+/*------------End FOOTER-------------------*/

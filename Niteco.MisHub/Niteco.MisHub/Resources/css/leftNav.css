@@ -1,0 +1,172 @@
+﻿html, body, input, textarea, keygen, select, button {
+    font-family: "Lato",Verdana,Helvetica,Arial,sans-serif;
+    /*font-size:12px;*/
+}
+
+.float {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.hidden {
+    display: none;
+}
+
+ul, li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Neo Sans W01' !important;
+}
+
+/*SharePoint updates */
+#sideNavBox {
+    display: none;
+}
+
+#contentBox {
+    margin-left: 80px;
+}
+
+#siteIcon {
+    /*display:none;*/
+    height: 45px;
+}
+
+.ms-siteicon-img {
+    max-width: 96px;
+    padding-top: 10px;
+}
+
+
+#titleAreaBox {
+    padding-left: 60px;
+}
+
+.ms-breadcrumb-box {
+    height: 45px;
+}
+
+#s4-titlerow {
+    height: 45px;
+    padding-bottom: 0px;
+}
+
+.ms-breadcrumb-top {
+    display: none;
+}
+
+#pageStatusBar[class], .ms-status-msg {
+    margin-left: 70px;
+}
+
+#WebPartAdderUpdatePanelContainer {
+    z-index: 100;
+    position: relative;
+}
+
+
+/*Font Style Fix */
+.ms-core-pageTitle, .ms-core-pageTitle a,
+.ms-webpart-titleText.ms-webpart-titleText, .ms-webpart-titleText > a {
+    font-family: 'Neo Sans W01' !important;
+}
+
+.ms-textLarge,
+.ms-core-defaultFont, #pageStatusBar, .ms-status-msg, .js-callout-body {
+    font-family: "Lato",Verdana,Helvetica,Arial,sans-serif;
+}
+
+.ms-rtestate-field,
+.ms-rteFontSize-2 {
+    font-family: "Lato",Verdana,Helvetica,Arial,sans-serif !important;
+}
+
+/* Navigation */
+#into-sitenav {
+    display: block;
+    position: fixed;
+    width: 60px;
+    height: 100%;
+    background: #333;
+    top: 85px;
+    left: 0px;
+}
+
+    #into-sitenav li.nav-item {
+        width: 200px;
+        height: 60px;
+        color: white;
+    }
+
+    #into-sitenav.folded li.nav-item {
+        width: 60px;
+    }
+
+
+    #into-sitenav li.nav-item a,
+    #into-sitenav li.nav-item a:link,
+    #into-sitenav li.nav-item a:visited {
+        color: white;
+        line-height: 75px;
+        text-align: left;
+        display: block;
+        cursor: pointer;
+        width: 190px;
+        height: 60px;
+        padding-left: 10px;
+    }
+
+        #into-sitenav li.nav-item a:hover {
+            background: #ED1C24;
+            color: #333;
+            text-decoration: none;
+        }
+
+    #into-sitenav li.nav-item.current a {
+        background: white;
+        color: #333;
+        text-decoration: none;
+    }
+
+    #into-sitenav li.nav-item#menu-control a:hover {
+        background: #ED1C24;
+    }
+
+
+    #into-sitenav i.fa {
+        width: 40px;
+        text-align: center;
+    }
+
+    #into-sitenav .menu-text {
+        padding-left: 15px;
+        display: inline-block;
+        height: 60px;
+        position: relative;
+        top: -8px;
+        font-size: 1em;
+    }
+
+    #into-sitenav.folded .menu-text {
+        display: none;
+    }
+
+
+    #into-sitenav.folded li.nav-item a,
+    #into-sitenav.folded li.nav-item a:link,
+    #into-sitenav.folded li.nav-item a:visited {
+        width: 60px;
+        text-align: center;
+        padding-left: 0;
+    }

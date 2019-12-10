@@ -1,0 +1,47 @@
+﻿{
+  "DefaultEnvironment": "NA",
+  "Sites": [
+      {
+        "Environment": "NA",
+        "Name": "NA"
+      },
+    {
+      "FastMode": true,
+      "Environment": "dev",
+      "Name": "dev",
+      "Url": "https://hccuk.sharepoint.com/sites/NitecoApp",
+      "Username": "tnguyen317@hccuk.onmicrosoft.com",
+      "Password": "Huyen@2413",
+      "Files": [
+        {
+          "Source": "Resources\\js",
+          "Destination": "/SiteAssets/Niteco/js"
+        },
+        {
+          "Source": "Resources\\css",
+          "Destination": "/SiteAssets/Niteco/css"
+        },
+        {
+          "Source": "Resources\\images",
+          "Destination": "/SiteAssets/Niteco/images"
+        },
+        {
+          "Source": "Resources\\libs",
+          "Destination": "/SiteAssets/Niteco/libs"
+        },
+        {
+          "Source": "Resources\\layouts",
+          "Destination": "/_catalogs/masterpage"
+        },
+        {
+          "Source": "Resources\\pages",
+          "Destination": "/pages"
+        },
+        {
+          "Source": "Resources\\sitepages",
+          "Destination": "/sitepages"
+        }
+      ]
+    }
+  ]
+}

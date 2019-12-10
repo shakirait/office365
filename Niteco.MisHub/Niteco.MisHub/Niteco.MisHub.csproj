@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{96232A8B-9FF6-407D-BEC6-7EE50E659C72}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Niteco.MisHub</RootNamespace>
+    <AssemblyName>Niteco.MisHub</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Deployment\00-Deploy.ps1" />
+    <None Include="Deployment\01-Check-SharePointContext.ps1" />
+    <None Include="Deployment\01-DeployAzureWebApp.ps1" />
+    <None Include="Deployment\01-Test-Connectivity.ps1" />
+    <None Include="Deployment\02-EnableDevSiteCollectionFeature.ps1" />
+    <None Include="Deployment\03-ActivateFeatures.ps1" />
+    <None Include="Deployment\10-PowerBIReports.ps1" />
+    <None Include="Deployment\15-Create-KPIPrefLists.ps1" />
+    <None Include="Deployment\16-Create-ReportsList.ps1" />
+    <None Include="Deployment\17-CreateNotificationList.ps1" />
+    <None Include="Deployment\20-LeftNavigation.ps1" />
+    <None Include="Deployment\30-DocumentLibrary.ps1" />
+    <None Include="Deployment\40-Apply-Theme.ps1" />
+    <None Include="Deployment\45-Create-SiteGroups.ps1" />
+    <None Include="Deployment\50-Upload-PageLayouts.ps1" />
+    <None Include="Deployment\60-Create-Pages.ps1" />
+    <None Include="Deployment\65-Add-WebParts.ps1" />
+    <None Include="Deployment\70-Upload-Assets.ps1" />
+    <None Include="Deployment\80-Package-App.ps1" />
+    <None Include="Deployment\90-UpdatePBIReportGuids.ps1" />
+    <None Include="Deployment\Artifacts\PowerBIPS\1.2.0.9\PowerBIPS-Automation.json" />
+    <None Include="Deployment\Artifacts\PowerBIPS\1.2.0.9\PowerBIPS.psd1" />
+    <None Include="Deployment\Artifacts\PowerBIPS\1.2.0.9\PowerBIPS.psm1" />
+    <None Include="DeployWebparts.ps1" />
+    <None Include="Environments\ni-dev.ps1" />
+    <None Include="Resources\Fonts\fontawesome-webfont.eot" />
+    <None Include="Resources\Fonts\fontawesome-webfont.ttf" />
+    <None Include="Resources\Fonts\fontawesome-webfont.woff" />
+    <None Include="Resources\Fonts\FontAwesome.otf" />
+    <None Include="Resources\Responsive\Css\bootstrap-theme.css.map" />
+    <None Include="Resources\Responsive\Css\bootstrap.css.map" />
+    <None Include="Resources\Responsive\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Resources\Responsive\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Resources\Responsive\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Resources\themes\Niteco.spcolor" />
+    <None Include="Resources\themes\Palette033.spcolor" />
+    <None Include="spdeployment.credentials.json" />
+    <None Include="SPDeployment.json" />
+    <None Include="Webparts\HomeUpcomingEvents.dwp" />
+    <None Include="Webparts\HomeCompanyGallery.dwp" />
+    <None Include="Webparts\HomeDiscussionView.dwp" />
+    <None Include="Webparts\HomeFormsAndTemplates.dwp" />
+    <None Include="Webparts\HomeOurNitecans.dwp" />
+    <None Include="Webparts\HomeAnnouncements.dwp" />
+    <None Include="Webparts\HomeCompanyAnnouncements.dwp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\sitepages\" />
+    <Folder Include="Templates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Deployment\Artifacts\PowerBIPS\1.2.0.9\Microsoft.IdentityModel.Clients.ActiveDirectory.dll" />
+    <Content Include="Deployment\Artifacts\PowerBIPS\1.2.0.9\Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms.dll" />
+    <Content Include="Deployment\Artifacts\PowerBIPS\1.2.0.9\PSGetModuleInfo.xml" />
+    <Content Include="Deployment\Readme.txt" />
+    <Content Include="Pages\Home.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Resources\css\font-awesome.css" />
+    <Content Include="Resources\css\into.css" />
+    <Content Include="Resources\css\leftNav.css" />
+    <Content Include="Resources\Fonts\fontawesome-webfont.svg" />
+    <Content Include="Resources\images\arrow-left.svg" />
+    <Content Include="Resources\images\arrow-next.png" />
+    <Content Include="Resources\images\arrow-prev.png" />
+    <Content Include="Resources\images\arrow-right.svg" />
+    <Content Include="Resources\images\background.png" />
+    <Content Include="Resources\images\breadcrumb.png" />
+    <Content Include="Resources\images\bx_loader.gif" />
+    <Content Include="Resources\images\close.png" />
+    <Content Include="Resources\images\controls.png" />
+    <Content Include="Resources\images\day_hover.png" />
+    <Content Include="Resources\images\eventDay.png" />
+    <Content Include="Resources\images\favicon.ico" />
+    <Content Include="Resources\images\hotNewsIcon.png" />
+    <Content Include="Resources\images\loading.gif" />
+    <Content Include="Resources\images\loading1.gif" />
+    <Content Include="Resources\images\logo.png" />
+    <Content Include="Resources\images\nav_bg.jpg" />
+    <Content Include="Resources\images\next.png" />
+    <Content Include="Resources\images\nextCalendar.png" />
+    <Content Include="Resources\images\nextHoverCalendar.png" />
+    <Content Include="Resources\images\nextslide.png" />
+    <Content Include="Resources\images\niteco-icon.png" />
+    <Content Include="Resources\images\niteco-icon_hover.png" />
+    <Content Include="Resources\images\nitecoFooter.png" />
+    <Content Include="Resources\images\pictureLibraryDefaultImage.png" />
+    <Content Include="Resources\images\prev.png" />
+    <Content Include="Resources\images\prevCalendar.png" />
+    <Content Include="Resources\images\prevHoverCalendar.png" />
+    <Content Include="Resources\images\search_icon.png" />
+    <Content Include="Resources\images\search_result_icon.png" />
+    <Content Include="Resources\images\seperate.png" />
+    <Content Include="Resources\images\slider_control.png" />
+    <Content Include="Resources\images\todayStyle.png" />
+    <Content Include="Resources\js\into.js" />
+    <Content Include="Resources\js\LeftNav.js" />
+    <Content Include="Resources\layouts\NITECOLayout1.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Resources\libs\handlebars-v4.0.5.js" />
+    <Content Include="Resources\libs\jquery-1.11.3.min.js" />
+    <Content Include="Resources\pages\Home.html" />
+    <Content Include="Resources\Responsive\Css\bootstrap-theme.css" />
+    <Content Include="Resources\Responsive\Css\bootstrap-theme.min.css" />
+    <Content Include="Resources\Responsive\Css\bootstrap.css" />
+    <Content Include="Resources\Responsive\Css\bootstrap.min.css" />
+    <Content Include="Resources\Responsive\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Resources\Responsive\js\bootstrap.js" />
+    <Content Include="Resources\Responsive\js\bootstrap.min.js" />
+    <Content Include="Resources\Responsive\js\npm.js" />
+    <Content Include="Resources\webparts\Announcements\announcement.css" />
+    <Content Include="Resources\webparts\Announcements\announcement.html" />
+    <Content Include="Resources\webparts\Announcements\announcement.js" />
+    <Content Include="Resources\webparts\CompanyAnnouncements\co-announcement.css" />
+    <Content Include="Resources\webparts\CompanyAnnouncements\co-announcement.html" />
+    <Content Include="Resources\webparts\CompanyAnnouncements\co-announcement.js" />
+    <Content Include="Resources\webparts\CompanyGallery\co-gallery.css" />
+    <Content Include="Resources\webparts\CompanyGallery\co-gallery.html" />
+    <Content Include="Resources\webparts\CompanyGallery\co-gallery.js" />
+    <Content Include="Resources\webparts\DiscussionView\discussion-view.css" />
+    <Content Include="Resources\webparts\DiscussionView\discussion-view.html" />
+    <Content Include="Resources\webparts\DiscussionView\discussion-view.js" />
+    <Content Include="Resources\webparts\FormsAndTemplates\forms-templates.css" />
+    <Content Include="Resources\webparts\FormsAndTemplates\forms-templates.html" />
+    <Content Include="Resources\webparts\FormsAndTemplates\forms-templates.js" />
+    <Content Include="Resources\webparts\Nav\jquery.fs.scroller.min.css" />
+    <Content Include="Resources\webparts\Nav\jquery.fs.scroller.min.js" />
+    <Content Include="Resources\webparts\Nav\nav.css" />
+    <Content Include="Resources\webparts\Nav\nav.html" />
+    <Content Include="Resources\webparts\Nav\nav.js" />
+    <Content Include="Resources\webparts\Nav\navconfig.js" />
+    <Content Include="Resources\webparts\NotificationWindow\NotificationWindow.js" />
+    <Content Include="Resources\webparts\NotificationWindow\NotificationWindowPOC.html" />
+    <Content Include="Resources\webparts\OurNitecans\our-nitecans.css" />
+    <Content Include="Resources\webparts\OurNitecans\our-nitecans.html" />
+    <Content Include="Resources\webparts\OurNitecans\our-nitecans.js" />
+    <Content Include="Resources\webparts\UpcomingEvents\upcoming-events.css" />
+    <Content Include="Resources\webparts\UpcomingEvents\upcoming-events.html" />
+    <Content Include="Resources\webparts\UpcomingEvents\upcoming-events.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
