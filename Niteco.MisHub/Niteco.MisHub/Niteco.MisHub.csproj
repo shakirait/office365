@@ -162,7 +162,7 @@
     <Content Include="Resources\webparts\Announcements\announcement.css" />
     <Content Include="Resources\webparts\Announcements\announcement.html" />
     <Content Include="Resources\webparts\Announcements\announcement.js" />
-    <Content Include="Resources\webparts\CompanyAnnouncements\co-announcement.css" />
+    <None Include="Resources\webparts\CompanyAnnouncements\co-announcement.scss" />
     <Content Include="Resources\webparts\CompanyAnnouncements\co-announcement.html" />
     <Content Include="Resources\webparts\CompanyAnnouncements\co-announcement.js" />
     <Content Include="Resources\webparts\CompanyGallery\co-gallery.css" />
