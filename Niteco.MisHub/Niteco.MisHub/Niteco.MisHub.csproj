@@ -84,6 +84,7 @@
     <None Include="Resources\Responsive\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Resources\themes\Niteco.spcolor" />
     <None Include="Resources\themes\Palette033.spcolor" />
+    <None Include="Resources\webparts\TopNavigation\top-navigation.scss" />
     <None Include="spdeployment.credentials.json" />
     <None Include="SPDeployment.json" />
     <None Include="Webparts\HomeUpcomingEvents.dwp" />
@@ -162,7 +163,7 @@
     <Content Include="Resources\webparts\Announcements\announcement.css" />
     <Content Include="Resources\webparts\Announcements\announcement.html" />
     <Content Include="Resources\webparts\Announcements\announcement.js" />
-    <None Include="Resources\webparts\CompanyAnnouncements\co-announcement.scss" />
+    <Content Include="Resources\webparts\CompanyAnnouncements\co-announcement.css" />
     <Content Include="Resources\webparts\CompanyAnnouncements\co-announcement.html" />
     <Content Include="Resources\webparts\CompanyAnnouncements\co-announcement.js" />
     <Content Include="Resources\webparts\CompanyGallery\co-gallery.css" />
@@ -185,6 +186,9 @@
     <Content Include="Resources\webparts\OurNitecans\our-nitecans.css" />
     <Content Include="Resources\webparts\OurNitecans\our-nitecans.html" />
     <Content Include="Resources\webparts\OurNitecans\our-nitecans.js" />
+    <Content Include="Resources\webparts\TopNavigation\NavObject.js" />
+    <Content Include="Resources\webparts\TopNavigation\top-navigation.html" />
+    <Content Include="Resources\webparts\TopNavigation\top-navigation.js" />
     <Content Include="Resources\webparts\UpcomingEvents\upcoming-events.css" />
     <Content Include="Resources\webparts\UpcomingEvents\upcoming-events.html" />
     <Content Include="Resources\webparts\UpcomingEvents\upcoming-events.js" />
