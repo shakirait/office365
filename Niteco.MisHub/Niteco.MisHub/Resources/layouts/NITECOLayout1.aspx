@@ -14,12 +14,16 @@
 
     <link rel="stylesheet" type="text/css" href="../SiteAssets/Niteco/css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="../SiteAssets/Niteco/Responsive/css/bootstrap.css" />
-	 <link rel="stylesheet" type="text/css" media="all" href="../siteassets/Niteco/webparts/Nav/jquery.fs.scroller.min.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="../siteassets/Niteco/webparts/Nav/jquery.fs.scroller.min.css" />
     <link rel="stylesheet" type="text/css" href="../SiteAssets/Niteco/css/into.css" />
+    <link rel="stylesheet" type="text/css" href="../SiteAssets/Niteco/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../SiteAssets/Niteco/css/header.min.css" />
+    <link rel="stylesheet" type='text/css' href='../siteassets/Niteco/webparts/TopNavigation/top-navigation.min.css' />
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.13/moment-timezone-with-data.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.SPServices/2014.02/jquery.SPServices-2014.02.min.js"></script>
+    <script type="text/javascript" src="../SiteAssets/Niteco/webparts/TopNavigation/top-navigation.js"></script>
     
 </asp:Content>
 
@@ -27,14 +31,65 @@
 	<SharePointWebControls:FieldValue id="PageTitle" FieldName="Title" runat="server"/>
 </asp:Content>
 <asp:Content ContentPlaceholderID="PlaceHolderMain" runat="server">
-	<div id='into-pagecontent'>
-        <div class="container">
+    <!--Wrapper -->
+	<div class="wrapper">
 
-            <!-- Menu -->
-            <div id="top-menu"></div>
+        <div class="container">
 
             <!-- Title Row-->
             <div class="row">
+                <div class="title-row">
+                    <div id="titleAreaBox">
+                        <div class="row">
+                            <!-- Logo -->
+                            <div class="col-sm-2 col-md-2 col-lg-2">
+                                <!--first column -->
+                                <div id="siteIcon" class="ms-tableCell ms-verticalAlignTop">
+                                    <div id="DeltaSiteLogo">
+                                        <a title="NitecoIntranet-Home" class="ms-siteicon-a" href="/">
+                                            <img class="ms-siteicon-img" name="onetidHeadbnnr0" src="../SiteAssets/Niteco/images/logo.png" alt="niteco logo">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        
+                            <!-- Top Navigation -->
+                            <div id="niTopNavandSearchbox" class="col-sm-8 col-md-8 col-lg-8">
+                                <div class="ms-tableCell ms-verticalAlignTop pull-left">
+                                    <nav id="myTopNav">
+                                        
+                                        <div id="DeltaTopNavigation" class="ms-displayInline">
+
+                                            <a name="startNavigation"></a>
+
+                                            <div id="topNavigationMenu" class=" noindex ms-core-listMenu-horizontalBox">
+                                                <ul id="rootAspMenu" class="root ms-core-listMenu-root static">
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </nav>
+                                </div>
+                            </div>
+
+                            <!-- Search Box -->
+                            <div id="niSearchbox" class="col-sm-2 col-md-2 col-lg-2">
+                               <div id="DeltaPlaceHolderSearchArea" class="ms-mpSearchBox ms-floatRight">
+                                  <div id="searchInputBox">
+                                     <div id="SearchBox" name="Control">
+                                         <input type="text" placeholder="Search..." maxlength="2048" accesskey="S" title="Search..." autocomplete="off" class="ms-textSmall ms-srch-sb-prompt ms-helperText">
+                                         <a title="Search" class="ms-srch-sb-searchLink">
+                                             <img src="/_layouts/15/images/searchresultui.png?rev=23" class="ms-srch-sb-searchImg" id="searchImg" alt="Search" style="display:none">
+
+                                         </a>
+                                     </div>
+                                     <div class="ms-clear"></div>
+                                  </div>
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                  <div id="mainBody" class="homepage_body-wrapper">
                     <div class="row homepage_body-row">
                         <!-- Company announcements -->

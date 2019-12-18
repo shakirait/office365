@@ -1,0 +1,50 @@
+﻿
+#contentBox {
+    margin: 0;
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    margin: 0 auto;
+    overflow: visible !important;
+}
+
+.title-row {
+    background-color: #262524;
+    margin-right: -192px;
+    margin-left: -192px;
+
+}
+    .title-row .row {
+        margin-right: 191px;
+        margin-left: 192px;
+    }
+
+#titleAreaBox {
+    margin: 0;
+}
+nav ul li {
+    text-align: center;
+}
+#DeltaSiteLogo {
+    padding-top: 20px;
+    margin-top: 0px;
+}
+
+.ms-core-listMenu-horizontalBox .dynamic-children.additional-background {
+    background: none;
+    padding-right: 0;
+}
+.ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item {
+    margin-right: 0;
+}
+#DeltaTopNavigation .menu-item-text {
+    font-size: 1.6rem;
+    color: #FFF;
+    font-weight: normal;
+}
+
+.copyright p {
+    margin: 0;
+}

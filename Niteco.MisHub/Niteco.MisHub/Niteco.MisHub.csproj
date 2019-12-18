@@ -48,6 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="Deployment\00-Deploy.ps1" />
     <None Include="Deployment\01-Check-SharePointContext.ps1" />
     <None Include="Deployment\01-DeployAzureWebApp.ps1" />
@@ -73,6 +77,7 @@
     <None Include="Deployment\Artifacts\PowerBIPS\1.2.0.9\PowerBIPS.psm1" />
     <None Include="DeployWebparts.ps1" />
     <None Include="Environments\ni-dev.ps1" />
+    <None Include="Resources\css\header.scss" />
     <None Include="Resources\Fonts\fontawesome-webfont.eot" />
     <None Include="Resources\Fonts\fontawesome-webfont.ttf" />
     <None Include="Resources\Fonts\fontawesome-webfont.woff" />
@@ -107,7 +112,14 @@
     <Content Include="Pages\Home.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
+    <Content Include="Resources\css\common.css" />
     <Content Include="Resources\css\font-awesome.css" />
+    <Content Include="Resources\css\header.css">
+      <DependentUpon>header.scss</DependentUpon>
+    </Content>
+    <Content Include="Resources\css\header.min.css">
+      <DependentUpon>header.css</DependentUpon>
+    </Content>
     <Content Include="Resources\css\into.css" />
     <Content Include="Resources\css\leftNav.css" />
     <Content Include="Resources\Fonts\fontawesome-webfont.svg" />
@@ -187,8 +199,14 @@
     <Content Include="Resources\webparts\OurNitecans\our-nitecans.html" />
     <Content Include="Resources\webparts\OurNitecans\our-nitecans.js" />
     <Content Include="Resources\webparts\TopNavigation\NavObject.js" />
+    <Content Include="Resources\webparts\TopNavigation\top-navigation.css">
+      <DependentUpon>top-navigation.scss</DependentUpon>
+    </Content>
     <Content Include="Resources\webparts\TopNavigation\top-navigation.html" />
     <Content Include="Resources\webparts\TopNavigation\top-navigation.js" />
+    <Content Include="Resources\webparts\TopNavigation\top-navigation.min.css">
+      <DependentUpon>top-navigation.css</DependentUpon>
+    </Content>
     <Content Include="Resources\webparts\UpcomingEvents\upcoming-events.css" />
     <Content Include="Resources\webparts\UpcomingEvents\upcoming-events.html" />
     <Content Include="Resources\webparts\UpcomingEvents\upcoming-events.js" />
