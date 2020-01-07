@@ -1,1 +1,75 @@
-﻿
+﻿.homepage_discussion-view-heading__link-group {
+  float: right;
+  width: 31%; }
+
+.homepage_discussion-view-heading__add-new {
+  position: relative;
+  line-height: 40px;
+  text-decoration: none;
+  color: #000;
+  opacity: 0.5; }
+
+.intranet_section-heading__link--small {
+  line-height: 40px; }
+
+.homepage_discussion-view-heading__separating-line {
+  position: relative; }
+  .homepage_discussion-view-heading__separating-line::after {
+    content: "";
+    border-right: 2px solid #ececec;
+    position: absolute;
+    height: 75%;
+    bottom: 11%;
+    left: 7.5px; }
+
+.homepage_discussion-view-wrapper {
+  box-shadow: 0 0 10px #aaa;
+  padding: 10px 30px;
+  color: #000; }
+
+.homepage_section-wrapper.bottom-section {
+  margin-top: 45px; }
+
+.homepage_discussion-view-item {
+  width: 426px;
+  position: relative;
+  padding: 18px 0 21px 0; }
+  .homepage_discussion-view-item__title {
+    font-size: 1.6rem;
+    line-height: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis; }
+  .homepage_discussion-view-item__description {
+    min-height: 32px; }
+  .homepage_discussion-view-item:not(:last-child)::after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    border-bottom: 1px solid #000;
+    opacity: 0.1;
+    bottom: 0; }
+
+.intranet_section-heading::after {
+  content: "";
+  width: 60px;
+  position: absolute;
+  border-bottom: 2px solid #FBCD24;
+  bottom: 0;
+  left: 0; }
+
+@media only screen and (max-width: 1366px) {
+  .homepage_discussion-view-heading__link-group {
+    width: 37%; }
+  .homepage_discussion-view-heading__add-new, .intranet_section-heading__link--small {
+    font-size: 1.3rem;
+    line-height: 40px; }
+  .homepage_discussion-view-item {
+    width: 330px;
+    padding: 16px 0; }
+    .homepage_discussion-view-item__description {
+      min-height: 30px; } }

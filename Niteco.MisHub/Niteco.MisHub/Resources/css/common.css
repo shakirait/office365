@@ -48,3 +48,43 @@ nav ul li {
 .copyright p {
     margin: 0;
 }
+
+.homepage_section-author {
+    text-decoration: none !important;
+    color: #47a8ca !important;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+    .homepage_section-author::before {
+        content: "\f007";
+        font-size: 1.8rem;
+        font-family: FontAwesome;
+        line-height: 25px;
+        color: #bcbcbc;
+        margin-right: 5px;
+    }
+.homepage_section-time {
+    font-size: 1.3rem;
+    opacity: 0.5;
+}
+    .homepage_section-time::before {
+        content: "\f133";
+        font-size: 1.8rem;
+        font-family: FontAwesome;
+        line-height: 25px;
+        opacity: 0.6;
+        margin-right: 5px;
+    }
+.homepage_section-comment {
+    font-size: 1.3rem;
+    opacity: 0.5;
+}
+    .homepage_section-comment::before {
+        content: "\f0e5";
+        font-size: 1.8rem;
+        font-family: FontAwesome;
+        line-height: 25px;
+        opacity: 0.6;
+        margin-right: 5px;
+    }

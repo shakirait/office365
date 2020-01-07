@@ -1,1 +1,45 @@
-﻿
+﻿.homepage_our-nitecans__group {
+  margin-top: 20px;
+  overflow: hidden;
+  margin-left: -15px;
+  margin-right: -15px;
+  height: 333px; }
+
+.homepage_our-nitecans__img-wrapper {
+  height: 230px;
+  display: inline-block;
+  width: 100%; }
+  .homepage_our-nitecans__img-wrapper .homepage_our-nitecans__img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%; }
+
+.homepage_our-nitecans__title-wrapper {
+  overflow: hidden;
+  margin-top: 5px;
+  margin-bottom: 5px; }
+  .homepage_our-nitecans__title-wrapper .homepage_our-nitecans__title {
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: black;
+    display: inline-block;
+    height: 50px; }
+  .homepage_our-nitecans__title-wrapper .homepage_our-nitecans__message {
+    height: 40px;
+    overflow: hidden;
+    text-align: justify; }
+
+.homepage_our-nitecans-placeholder {
+  height: 330px; }
+  .homepage_our-nitecans-placeholder__second-title-top {
+    top: 0;
+    height: 10px;
+    width: 100%; }
+  .homepage_our-nitecans-placeholder__first-description-top {
+    top: 45px;
+    height: 15px;
+    width: 100%; }
+  .homepage_our-nitecans-placeholder__second-description-top {
+    top: 75px;
+    height: 10px;
+    width: 100%; }

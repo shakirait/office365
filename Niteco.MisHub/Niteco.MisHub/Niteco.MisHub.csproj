@@ -89,7 +89,14 @@
     <None Include="Resources\Responsive\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Resources\themes\Niteco.spcolor" />
     <None Include="Resources\themes\Palette033.spcolor" />
+    <None Include="Resources\webparts\Announcements\announcement.scss" />
+    <None Include="Resources\webparts\CompanyAnnouncements\co-announcement.scss" />
+    <None Include="Resources\webparts\CompanyGallery\co-gallery.scss" />
+    <None Include="Resources\webparts\DiscussionView\discussion-view.scss" />
+    <None Include="Resources\webparts\FormsAndTemplates\forms-templates.scss" />
+    <None Include="Resources\webparts\OurNitecans\our-nitecans.scss" />
     <None Include="Resources\webparts\TopNavigation\top-navigation.scss" />
+    <None Include="Resources\webparts\UpcomingEvents\upcoming-events.scss" />
     <None Include="spdeployment.credentials.json" />
     <None Include="SPDeployment.json" />
     <None Include="Webparts\HomeUpcomingEvents.dwp" />
@@ -123,6 +130,9 @@
     <Content Include="Resources\css\into.css" />
     <Content Include="Resources\css\leftNav.css" />
     <Content Include="Resources\Fonts\fontawesome-webfont.svg" />
+    <Content Include="Resources\images\announcements\Niteco performance assessment processes - 20190409.jpg" />
+    <Content Include="Resources\images\announcements\NTS.png" />
+    <Content Include="Resources\images\announcements\Performance evaluation.jpeg" />
     <Content Include="Resources\images\arrow-left.svg" />
     <Content Include="Resources\images\arrow-next.png" />
     <Content Include="Resources\images\arrow-prev.png" />
@@ -135,7 +145,23 @@
     <Content Include="Resources\images\day_hover.png" />
     <Content Include="Resources\images\eventDay.png" />
     <Content Include="Resources\images\favicon.ico" />
+    <Content Include="Resources\images\gallery\1537237441618.jpg" />
+    <Content Include="Resources\images\gallery\180618_TVScreen_16x9.jpg" />
+    <Content Include="Resources\images\gallery\20180918_182646.jpg" />
+    <Content Include="Resources\images\gallery\IMG_0907.jpg" />
+    <Content Include="Resources\images\gallery\IMG_1607.jpg" />
+    <Content Include="Resources\images\gallery\IMG_20181026_192647.jpg" />
+    <Content Include="Resources\images\gallery\_HNE0588.jpg" />
+    <Content Include="Resources\images\gallery\_HNE4207.jpg" />
     <Content Include="Resources\images\hotNewsIcon.png" />
+    <Content Include="Resources\images\hotnews\247proactive.jpg" />
+    <Content Include="Resources\images\hotnews\Ascend 2019 pic of Mark Lotta and Fredrik.png" />
+    <Content Include="Resources\images\hotnews\Lotta-3.jpg" />
+    <Content Include="Resources\images\hotnews\magento devs.png" />
+    <Content Include="Resources\images\hotnews\Performance evaluation.jpeg" />
+    <Content Include="Resources\images\icon\folder.gif" />
+    <Content Include="Resources\images\icon\icdocx.png" />
+    <Content Include="Resources\images\icon\icpdf.png" />
     <Content Include="Resources\images\loading.gif" />
     <Content Include="Resources\images\loading1.gif" />
     <Content Include="Resources\images\logo.png" />
@@ -147,6 +173,10 @@
     <Content Include="Resources\images\niteco-icon.png" />
     <Content Include="Resources\images\niteco-icon_hover.png" />
     <Content Include="Resources\images\nitecoFooter.png" />
+    <Content Include="Resources\images\our-nitecans\54671853-postcard-congratulations-you-have-a-boy-little-newborn-baby-boy-baby-in-cradle-with-blue-bow-.jpg" />
+    <Content Include="Resources\images\our-nitecans\trang.ngo.jpg" />
+    <Content Include="Resources\images\our-nitecans\trang.nguyen6 ava.jpg" />
+    <Content Include="Resources\images\our-nitecans\Vu Hoang Ngoc ava.jpg" />
     <Content Include="Resources\images\pictureLibraryDefaultImage.png" />
     <Content Include="Resources\images\prev.png" />
     <Content Include="Resources\images\prevCalendar.png" />
@@ -172,21 +202,46 @@
     <Content Include="Resources\Responsive\js\bootstrap.js" />
     <Content Include="Resources\Responsive\js\bootstrap.min.js" />
     <Content Include="Resources\Responsive\js\npm.js" />
-    <Content Include="Resources\webparts\Announcements\announcement.css" />
+    <Content Include="Resources\webparts\Announcements\announcement.css">
+      <DependentUpon>announcement.scss</DependentUpon>
+    </Content>
     <Content Include="Resources\webparts\Announcements\announcement.html" />
     <Content Include="Resources\webparts\Announcements\announcement.js" />
-    <Content Include="Resources\webparts\CompanyAnnouncements\co-announcement.css" />
+    <Content Include="Resources\webparts\Announcements\announcement.min.css">
+      <DependentUpon>announcement.css</DependentUpon>
+    </Content>
+    <Content Include="Resources\webparts\CompanyAnnouncements\co-announcement.css">
+      <DependentUpon>co-announcement.scss</DependentUpon>
+    </Content>
     <Content Include="Resources\webparts\CompanyAnnouncements\co-announcement.html" />
     <Content Include="Resources\webparts\CompanyAnnouncements\co-announcement.js" />
-    <Content Include="Resources\webparts\CompanyGallery\co-gallery.css" />
+    <Content Include="Resources\webparts\CompanyAnnouncements\co-announcement.min.css">
+      <DependentUpon>co-announcement.css</DependentUpon>
+    </Content>
+    <Content Include="Resources\webparts\CompanyGallery\co-gallery.css">
+      <DependentUpon>co-gallery.scss</DependentUpon>
+    </Content>
     <Content Include="Resources\webparts\CompanyGallery\co-gallery.html" />
     <Content Include="Resources\webparts\CompanyGallery\co-gallery.js" />
-    <Content Include="Resources\webparts\DiscussionView\discussion-view.css" />
+    <Content Include="Resources\webparts\CompanyGallery\co-gallery.min.css">
+      <DependentUpon>co-gallery.css</DependentUpon>
+    </Content>
+    <Content Include="Resources\webparts\DiscussionView\discussion-view.css">
+      <DependentUpon>discussion-view.scss</DependentUpon>
+    </Content>
     <Content Include="Resources\webparts\DiscussionView\discussion-view.html" />
     <Content Include="Resources\webparts\DiscussionView\discussion-view.js" />
-    <Content Include="Resources\webparts\FormsAndTemplates\forms-templates.css" />
+    <Content Include="Resources\webparts\DiscussionView\discussion-view.min.css">
+      <DependentUpon>discussion-view.css</DependentUpon>
+    </Content>
+    <Content Include="Resources\webparts\FormsAndTemplates\forms-templates.css">
+      <DependentUpon>forms-templates.scss</DependentUpon>
+    </Content>
     <Content Include="Resources\webparts\FormsAndTemplates\forms-templates.html" />
     <Content Include="Resources\webparts\FormsAndTemplates\forms-templates.js" />
+    <Content Include="Resources\webparts\FormsAndTemplates\forms-templates.min.css">
+      <DependentUpon>forms-templates.css</DependentUpon>
+    </Content>
     <Content Include="Resources\webparts\Nav\jquery.fs.scroller.min.css" />
     <Content Include="Resources\webparts\Nav\jquery.fs.scroller.min.js" />
     <Content Include="Resources\webparts\Nav\nav.css" />
@@ -195,9 +250,14 @@
     <Content Include="Resources\webparts\Nav\navconfig.js" />
     <Content Include="Resources\webparts\NotificationWindow\NotificationWindow.js" />
     <Content Include="Resources\webparts\NotificationWindow\NotificationWindowPOC.html" />
-    <Content Include="Resources\webparts\OurNitecans\our-nitecans.css" />
+    <Content Include="Resources\webparts\OurNitecans\our-nitecans.css">
+      <DependentUpon>our-nitecans.scss</DependentUpon>
+    </Content>
     <Content Include="Resources\webparts\OurNitecans\our-nitecans.html" />
     <Content Include="Resources\webparts\OurNitecans\our-nitecans.js" />
+    <Content Include="Resources\webparts\OurNitecans\our-nitecans.min.css">
+      <DependentUpon>our-nitecans.css</DependentUpon>
+    </Content>
     <Content Include="Resources\webparts\TopNavigation\NavObject.js" />
     <Content Include="Resources\webparts\TopNavigation\top-navigation.css">
       <DependentUpon>top-navigation.scss</DependentUpon>
@@ -207,9 +267,14 @@
     <Content Include="Resources\webparts\TopNavigation\top-navigation.min.css">
       <DependentUpon>top-navigation.css</DependentUpon>
     </Content>
-    <Content Include="Resources\webparts\UpcomingEvents\upcoming-events.css" />
+    <Content Include="Resources\webparts\UpcomingEvents\upcoming-events.css">
+      <DependentUpon>upcoming-events.scss</DependentUpon>
+    </Content>
     <Content Include="Resources\webparts\UpcomingEvents\upcoming-events.html" />
     <Content Include="Resources\webparts\UpcomingEvents\upcoming-events.js" />
+    <Content Include="Resources\webparts\UpcomingEvents\upcoming-events.min.css">
+      <DependentUpon>upcoming-events.css</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

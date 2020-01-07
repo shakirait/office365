@@ -1,0 +1,121 @@
+﻿.homepage_upcoming-events-wrapper {
+    color: #000;
+}
+.homepage_upcoming-events-group {
+    margin-top: 20px;
+    min-height: 320px;
+}
+.homepage_upcoming-events-item {
+    position: relative;
+    box-shadow: 0 0 10px #aaa;
+    padding: 13px 13px 13px 34px;
+
+    &__date {
+        float: left;
+        padding: 11px 0px;
+        width: 30%;
+        line-height: 1;
+
+        &--date {
+            font-size: 5rem;
+            font-weight: 900;
+            display: inline-block;
+        }
+
+        &--month {
+            font-size: 3rem;
+            opacity: 0.4;
+            display: inline-block;
+            margin-left: 4px;
+        }
+    }
+
+    &__content {
+        position: relative;
+        font-weight: bold;
+        padding: 10px 0px 0px 185px;
+
+        &::after {
+            content: "";
+            height: 100%;
+            border-right: 2px solid #ececec;
+            position: absolute;
+            left: 35%;
+            top: 0;
+        }
+    }
+
+    &__title {
+        max-height: 35px;
+        font-size: 1.6rem;
+        text-decoration: none;
+        color: #000;
+        display: block;
+        line-height: 17px;
+        overflow: hidden;
+    }
+
+    &__time {
+        font-size: 1.2rem;
+        margin-top: 10px;
+        font-weight: normal;
+    }
+
+    &__pending--start {
+        position: relative;
+        margin-left: 22px;
+        opacity: 0.5;
+
+        &::before {
+            content: "";
+            height: 100%;
+            border-right: 2px solid #000;
+            position: absolute;
+            opacity: 0.5;
+            right: 120%;
+            bottom: 0;
+        }
+    }
+
+    &__pending--end {
+        position: relative;
+        margin-left: 10px;
+        opacity: 0.5;
+
+        &::before {
+            content: "-";
+            height: 100%;
+            position: absolute;
+            right: 110%;
+            bottom: 20%;
+        }
+    }
+
+    &:not(:first-child) {
+        margin-top: 16px;
+    }
+}
+.homepage_upcoming-events-placeholder {
+    height: 55px;
+
+    &__title-bottom {
+        top: 28px;
+        right: 0;
+        height: 10px;
+        left: 0;
+    }
+
+    &__day-right, &__pending-right {
+        top: 38px;
+        height: 17px;
+        width: 30px;
+    }
+
+    &__day-right {
+        left: 100px;
+    }
+
+    &__pending-right {
+        right: 0;
+    }
+}
